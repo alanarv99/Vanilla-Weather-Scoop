@@ -1,0 +1,46 @@
+body {
+  background: linear-gradient(#2980b9, #6dd5fa, #ffffff);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.form-input {
+  border-radius: 5px;
+}
+.form-button {
+  border-radius: 5px;
+}
+.location {
+  text-align: center;
+}
+.weather-box {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: linear-gradient(#ffffff, #6dd5fa, #2980b9);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.date-time-header {
+  padding-right: 15px;
+}
+
+.today-header {
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  font-size: 60px;
+  margin-left: 0px;
+}
+
+.forecast-header {
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  font-size: 60px;
+  margin-left: 0px;
+}
