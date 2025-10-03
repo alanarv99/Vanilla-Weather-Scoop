@@ -16,38 +16,50 @@
   <body>
     <div class="container total-box">
       <h1>Vanilla Scoop Weather Application</h1>
-      <form class="form-inline justify-content-center">
+      <form class="form-inline justify-content-center" id="searchForm">
         <div class="form-group mb-2">
-          <button class="form-button" type="submit">📍</button>
+          <button class="form-button" type="submit" id="yourLocation">
+            📍
+          </button>
         </div>
         <div class="form-group mx-md-3 mb-2">
           <input
             class="form-control"
             placeholder="Search for your city..."
             type="text"
+            autofocus="on"
+            id="searchBar"
           />
         </div>
         <div class="form-group mb-2">
-          <button class="form-button" type="submit">🔎</button>
+          <button class="form-button" type="submit" id="searchLocation">
+            🔎
+          </button>
         </div>
       </form>
-      <h2 class="location">New York City, NY 07746</h2>
+      <h2 class="location"><span id="city">New York City</span>, <span id="country">USA</h2>
       <div class="container weather-box">
-        <h3 class="date-time-header row justify-content-end">
+        <h3 class="date-time-header row justify-content-end" id="time">
           THURSDAY, SEPTEMBER 25, 2025 AT 1:34:05AM
         </h3>
         <div class="row">
-          <div class="col-sm">
+          <div class="col-2">
             <h2 class="today-header"><strong>TODAY</strong></h2>
           </div>
-          <div class="col-md">
-            <img />
+          <div class="col-4" id="todayIcon">
           </div>
-          <div class="col-md">
-            <h4>High 65°F | Low 43°F</h4>
-
-            <h4>Humidity: 46%</h4>
-            <h4>Wind 5MPH</h4>
+          <div class="col-6">
+            <h4>
+              Current: <span id="todayTempF">65</span>°F |
+              <span id="todayTempC">33</span>°C
+            </h4>
+            
+            <h4>
+              Feels Like: <span id="todayFeelsLikeF">43</span>°F |
+              <span id="todayFeelsLikeC">33</span>°C
+            </h4>
+            <h4>Humidity: <span id="todayHumidity">46</span>%</h4>
+            <h4>Wind: <span id="todayWind">5 </span> MPH</h4>
           </div>
         </div>
         <div class="row">
@@ -58,7 +70,7 @@
               <div class="row forecast-day">Monday</div>
               <div class="row forecast-symbol">🌞</div>
               <div class="row forecast-temp-high">
-                54°F | <span class="forecast-low-temp">36°F</span>
+                54°F | <span id="forecast-low-temp">36°F</span>
               </div>
             </div>
           </div>
