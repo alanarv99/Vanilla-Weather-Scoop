@@ -28,7 +28,7 @@
             placeholder="Search for your city..."
             type="text"
             autofocus="on"
-            id="searchBar"
+            id="searchInput"
           />
         </div>
         <div class="form-group mb-2">
@@ -37,23 +37,22 @@
           </button>
         </div>
       </form>
-      <h2 class="location"><span id="city">New York City</span>, <span id="country">USA</h2>
+      <h2 class="location">
+        <span id="city"></span>, <span id="country"></span>
+      </h2>
       <div class="container weather-box">
-        <h3 class="date-time-header row justify-content-end" id="time">
-          THURSDAY, SEPTEMBER 25, 2025 AT 1:34:05AM
-        </h3>
+        <h3 class="date-time-header row justify-content-end" id="time"></h3>
         <div class="row">
           <div class="col-2">
             <h2 class="today-header"><strong>TODAY</strong></h2>
           </div>
-          <div class="col-4" id="todayIcon">
-          </div>
+          <div class="col-4" id="todayWeatherIcon"></div>
           <div class="col-6">
             <h4>
               Current: <span id="todayTempF">65</span>°F |
               <span id="todayTempC">33</span>°C
             </h4>
-            
+
             <h4>
               Feels Like: <span id="todayFeelsLikeF">43</span>°F |
               <span id="todayFeelsLikeC">33</span>°C

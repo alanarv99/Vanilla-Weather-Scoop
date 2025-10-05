@@ -39,6 +39,11 @@ h1 {
   margin-left: 0px;
 }
 
+.todayWeatherIcon {
+  height: 200px;
+  width: 200px;
+}
+
 .forecast-header {
   writing-mode: sideways-lr;
   text-orientation: mixed;
