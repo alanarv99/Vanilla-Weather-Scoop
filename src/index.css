@@ -9,16 +9,20 @@ h1 {
   text-align: center;
 }
 
-.form-input {
+#searchInput {
   border-radius: 5px;
+  width: 520px;
 }
+
 .form-button {
   border-radius: 5px;
   border: 1px solid black;
 }
+
 .location {
   text-align: center;
 }
+
 .weather-box {
   border: 1px solid black;
   border-radius: 5px;
@@ -26,6 +30,7 @@ h1 {
   background: linear-gradient(#ffffff, #6dd5fa, #2980b9);
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 .date-time-header {
@@ -42,6 +47,17 @@ h1 {
 .todayWeatherIcon {
   height: 200px;
   width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.todayInfo {
+  display: grid;
+  place-content: center;
+}
+
+.lineBreak {
+  border: 1px solid black;
 }
 
 .forecast-header {
