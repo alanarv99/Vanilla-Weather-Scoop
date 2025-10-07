@@ -5,9 +5,10 @@ function showWeather(response) {
   let countryElement = document.querySelector("#country");
   let date = new Date(dataResponse.time * 1000);
   let timeElement = document.querySelector("#time");
-  let temperature = dataResponse.temperature;
-  let cToF = (temperature.current * 9) / 5 + 32;
-  let feelsCToF = (temperature.feels_like * 9) / 5 + 32;
+  let temp = dataResponse.temperature.current;
+  let feelLikeTemp = dataResponse.temperature.feels_like;
+  let cToF = (temp * 9) / 5 + 32;
+  let feelsCToF = (feelLikeTemp * 9) / 5 + 32;
   let iconElement = document.querySelector("#todayWeatherIcon");
   let iconUrl = dataResponse.condition.icon_url;
   let temperatureFElement = document.querySelector("#todayTempF");
@@ -22,10 +23,10 @@ function showWeather(response) {
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${iconUrl}" class="todayWeatherIcon" />`;
   temperatureFElement.innerHTML = Math.round(cToF);
-  temperatureCElement.innerHTML = Math.round(temperature.current);
+  temperatureCElement.innerHTML = Math.round(temp);
   todayFeelsLikeFElement.innerHTML = Math.round(feelsCToF);
-  todayFeelsLikeCElement.innerHTML = Math.round(temperature.feels_like);
-  humidityElement.innerHTML = temperature.humidity;
+  todayFeelsLikeCElement.innerHTML = Math.round(feelLikeTemp);
+  humidityElement.innerHTML = dataResponse.temperature.humidity;
   windElement.innerHTML = Math.round(dataResponse.wind.speed);
 }
 
@@ -71,12 +72,30 @@ function searchCity(city) {
   axios.get(url).then(showWeather);
 }
 
+function showPosition(position) {
+  let apiKey = "260420cae416f4dteddo330fbd8c9c7b";
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
+
+function getPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 function handleSearch(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#searchInput");
-
+  searchInputElement.addEventListener(
+    "submit",
+    searchCity(searchInputElement.value)
+  );
   searchCity(searchInputElement.value);
 }
+
+let currentButton = document.querySelector("#currentLocation");
+currentButton.addEventListener("click", getPosition);
 
 let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", handleSearch);
