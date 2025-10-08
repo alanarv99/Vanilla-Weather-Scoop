@@ -64,13 +64,15 @@
         <hr class="lineBreak" />
         <div class="row">
           <h2 class="forecast-header"><strong>FORECAST</strong></h2>
-
-          <div class="row forecast-top-row">
-            <div class="col-sm">
-              <div class="row forecast-day">Monday</div>
-              <div class="row forecast-symbol">🌞</div>
-              <div class="row forecast-temp-high">
-                54°F | <span id="forecast-low-temp">36°F</span>
+          <div class="forecastHTML">
+            <div class="row forecast-top-row">
+              <div class="col-sm">
+                <div class="row" id="forecastDay">Monday</div>
+                <div class="row" id="forecastIcon"></div>
+                <div class="row">
+                  <span id="forecastMaxTemp">54</span>°F |
+                  <span id="forecastMinTemp">36</span>°F
+                </div>
               </div>
             </div>
           </div>

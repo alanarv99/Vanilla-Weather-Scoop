@@ -80,6 +80,27 @@ function showPosition(position) {
   axios.get(url).then(showWeather);
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[date.getDay()];
+}
+console.log(formatForecastDay);
+function showForecast() {}
+function getForecast(city) {
+  let apiKey = "260420cae416f4dteddo330fbd8c9c7b";
+  let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axiox.get(url).then(showForecast);
+}
+
 function getPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
