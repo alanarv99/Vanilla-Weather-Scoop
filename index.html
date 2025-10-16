@@ -40,38 +40,91 @@
       <h2 class="location">
         <span id="city"></span>, <span id="country"></span>
       </h2>
-      <div class="container weather-box">
-        <h3 class="date-time-header row justify-content-end" id="time"></h3>
+      <div class="container weatherBox">
+        <h3 class="dateTimeHeader row justify-content-end" id="time"></h3>
         <div class="row">
           <div class="col-2">
             <h2 class="today-header"><strong>TODAY</strong></h2>
           </div>
           <div class="col-4" id="todayWeatherIcon"></div>
           <div class="col-6 todayInfo">
-            <h4>
+            <h4 class="todayInfoStuff">
               Current: <span id="todayTempF">65</span>°F |
               <span id="todayTempC">33</span>°C
             </h4>
 
-            <h4>
+            <h4 class="todayInfoStuff">
               Feels Like: <span id="todayFeelsLikeF">43</span>°F |
               <span id="todayFeelsLikeC">33</span>°C
             </h4>
-            <h4>Humidity: <span id="todayHumidity">46</span>%</h4>
-            <h4>Wind: <span id="todayWind">5 </span> MPS</h4>
+            <h4 class="todayInfoStuff">
+              Humidity: <span id="todayHumidity">46</span>%
+            </h4>
+            <h4 class="todayInfoStuff">
+              Wind: <span id="todayWind">5 </span> MPS
+            </h4>
           </div>
         </div>
+
         <hr class="lineBreak" />
-        <div class="row">
-          <h2 class="forecast-header"><strong>FORECAST</strong></h2>
-          <div class="forecastHTML">
-            <div class="row forecast-top-row">
-              <div class="col-sm">
-                <div class="row" id="forecastDay">Monday</div>
-                <div class="row" id="forecastIcon"></div>
-                <div class="row">
-                  <span id="forecastMaxTemp">54</span>°F |
-                  <span id="forecastMinTemp">36</span>°F
+
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <h2 class="forecastHeader"><strong>FORECAST</strong></h2>
+            </div>
+            <div class="col-10">
+              <div class="row forecastTopRow">
+                <div class="col forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
+                </div>
+                <div class="col forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
+                </div>
+                <div class="col forecastDayBox forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
+                </div>
+              </div>
+
+              <div class="row forecastBottomRow">
+                <div class="col forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
+                </div>
+                <div class="col forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
+                </div>
+                <div class="col forecastDayBox">
+                  <div class="row" id="forecastDay">Monday</div>
+                  <div class="row" id="forecastIcon"></div>
+                  <div class="row">
+                    <span id="forecastMaxTemp">54</span>°F |
+                    <span id="forecastMinTemp">36</span>°F
+                  </div>
                 </div>
               </div>
             </div>

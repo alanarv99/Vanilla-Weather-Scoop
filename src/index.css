@@ -21,27 +21,30 @@ h1 {
 
 .location {
   text-align: center;
+  font-size: 50px;
 }
 
-.weather-box {
+.weatherBox {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   background: linear-gradient(#ffffff, #6dd5fa, #2980b9);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10px;
+  padding: 20px;
 }
 
-.date-time-header {
-  padding-right: 15px;
+.dateTimeHeader {
+  padding-right: 20px;
+  font-size: 45px;
 }
 
 .today-header {
   writing-mode: sideways-lr;
   text-orientation: mixed;
   font-size: 60px;
-  margin-left: 0px;
+  margin-left: 11px;
+  padding-right: 0px;
 }
 
 .todayWeatherIcon {
@@ -56,13 +59,28 @@ h1 {
   place-content: center;
 }
 
+.todayInfoStuff {
+  font-size: 30px;
+}
+
 .lineBreak {
   border: 1px solid black;
 }
 
-.forecast-header {
+.forecastHeader {
   writing-mode: sideways-lr;
   text-orientation: mixed;
   font-size: 60px;
   margin-left: 0px;
+  padding: 0px;
+}
+
+.forecastDayBox {
+  font-size: 45px;
+  display: grid;
+  place-content: center;
+}
+
+#forecastDay {
+  justify-content: center;
 }
