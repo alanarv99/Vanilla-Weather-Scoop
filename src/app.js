@@ -28,6 +28,8 @@ function showWeather(response) {
   todayFeelsLikeCElement.innerHTML = Math.round(feelLikeTemp);
   humidityElement.innerHTML = dataResponse.temperature.humidity;
   windElement.innerHTML = Math.round(dataResponse.wind.speed);
+
+  showForecast(dataResponse.city);
 }
 
 function formatDate(date) {
@@ -72,12 +74,13 @@ function searchCity(city) {
   axios.get(url).then(showWeather);
 }
 
-function showPosition(position) {
-  let apiKey = "260420cae416f4dteddo330fbd8c9c7b";
-  let lon = position.coords.longitude;
-  let lat = position.coords.latitude;
-  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
-  axios.get(url).then(showWeather);
+function handleSearch(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#searchInput");
+  searchInputElement.addEventListener(
+    "submit",
+    searchCity(searchInputElement.value)
+  );
 }
 
 function formatForecastDay(timestamp) {
@@ -93,26 +96,48 @@ function formatForecastDay(timestamp) {
   ];
   return days[date.getDay()];
 }
-console.log(formatForecastDay);
-function showForecast() {}
-function getForecast(city) {
+function searchForecastCity(city) {
   let apiKey = "260420cae416f4dteddo330fbd8c9c7b";
   let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-  axiox.get(url).then(showForecast);
+  axios.get(url).then(showForecast);
+}
+
+function showForecast(response) {
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `    <div class="row forecastDay">${formatForecastDay(day.time)}</div>
+                  <div class="row forecastIcon">
+                  <img src="${day.condition.icon_url}" />
+                  </div>
+                  <div class="row">
+                    <span class="forecastMaxTemp"><strong>${Math.round(
+                      day.temperature.maximum
+                    )}</strong></span>°F |
+                    <span class="forecastMinTemp"> ${Math.round(
+                      day.temperature.minimum
+                    )}</span>°F
+                    </div>
+                    `;
+    }
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+function showPosition(position) {
+  let apiKey = "260420cae416f4dteddo330fbd8c9c7b";
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(url).then(showWeather);
 }
 
 function getPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function handleSearch(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#searchInput");
-  searchInputElement.addEventListener(
-    "submit",
-    searchCity(searchInputElement.value)
-  );
-  searchCity(searchInputElement.value);
 }
 
 let currentButton = document.querySelector("#currentLocation");
@@ -122,3 +147,4 @@ let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("New York");
+searchForecastCity("New York");
