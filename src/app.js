@@ -109,17 +109,20 @@ function showForecast(response) {
     if (index < 6) {
       forecastHtml =
         forecastHtml +
-        `    <div class="row forecastDay">${formatForecastDay(day.time)}</div>
+        `<div class="forecastInfo"> <div class="row forecastDay">${formatForecastDay(
+          day.time
+        )}</div>
                   <div class="row forecastIcon">
-                  <img src="${day.condition.icon_url}" />
+                  <img class="forecastIcon" src="${day.condition.icon_url}" />
                   </div>
-                  <div class="row">
+                  <div class="row minMax">
                     <span class="forecastMaxTemp"><strong>${Math.round(
                       day.temperature.maximum
-                    )}</strong></span>°F |
+                    )}</strong></span>°F | 
                     <span class="forecastMinTemp"> ${Math.round(
                       day.temperature.minimum
                     )}</span>°F
+                    </div>
                     </div>
                     `;
     }

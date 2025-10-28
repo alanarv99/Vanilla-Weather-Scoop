@@ -75,12 +75,26 @@ h1 {
   padding: 0px;
 }
 
-.forecastDayBox {
-  font-size: 45px;
-  display: grid;
-  place-content: center;
+.forecastInfo {
+  display: inline-grid;
+  grid-template-columns: 155px;
+  column-gap: 30px;
+  text-align: center;
+  margin-top: 55px;
+}
+.forecastDay {
+  justify-content: center;
+  font-weight: 500;
+  font-size: 30px;
 }
 
-#forecastDay {
+.forecastIcon {
   justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.minMax {
+  justify-content: center;
+  font-size: 30px;
 }
