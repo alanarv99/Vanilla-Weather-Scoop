@@ -80,7 +80,7 @@ h1 {
   grid-template-columns: 155px;
   column-gap: 30px;
   text-align: center;
-  margin-top: 55px;
+  margin-top: 8px;
 }
 .forecastDay {
   justify-content: center;

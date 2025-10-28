@@ -106,6 +106,12 @@ function showForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
+    let maxTemp = day.temperature.maximum;
+    let minTemp = day.temperature.minimum;
+    let maxCToF = Math.round((maxTemp * 9) / 5 + 32);
+    let minCToF = Math.round((minTemp * 9) / 5 + 32);
+    let forecastdisplay = `${maxCToF}°F | ${minCToF}°F`;
+
     if (index < 6) {
       forecastHtml =
         forecastHtml +
@@ -116,12 +122,7 @@ function showForecast(response) {
                   <img class="forecastIcon" src="${day.condition.icon_url}" />
                   </div>
                   <div class="row minMax">
-                    <span class="forecastMaxTemp"><strong>${Math.round(
-                      day.temperature.maximum
-                    )}</strong></span>°F | 
-                    <span class="forecastMinTemp"> ${Math.round(
-                      day.temperature.minimum
-                    )}</span>°F
+                    ${forecastdisplay}
                     </div>
                     </div>
                     `;
